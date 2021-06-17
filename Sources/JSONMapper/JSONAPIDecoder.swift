@@ -12,8 +12,9 @@ public class JSONAPIDecoder: JSONDecoder {
 
     private let decoder: JSONEncoder
 
-    init(decoder: JSONEncoder = JSONEncoder()) {
+    public init(decoder: JSONEncoder = JSONEncoder()) {
         self.decoder = decoder
+        super.init()
     }
 
     public override func decode<T>(_ type: T.Type, from data: Data) throws -> T where T: Decodable {
