@@ -23,11 +23,11 @@ public class JSONAPIDecoder: JSONDecoder {
         let dictionary = includedDictionary(from: includedData)
 
         switch jsonAPIObject.type {
-        case .data(let data): 
+        case .data(let data):
             return try decode(data, including: dictionary, into: type)
-        case .meta(let meta): 
+        case .meta(let meta):
             return try decode(meta, into: type)
-        case .errors(let errors): 
+        case .errors(let errors):
             throw errors
         }
     }
