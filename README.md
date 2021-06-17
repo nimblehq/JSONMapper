@@ -1,12 +1,19 @@
-# Git Repository Template
+# JSONMapper
 
-Project repository template to set up all public projects at [Nimble](https://nimblehq.co/)
+An iOS library supports mapping json data
 
-## Usage
+## Installation
 
-Clone the repository
+### Swift Package Manager
 
-`git clone git@github.com:nimblehq/git-template.git`
+The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but Alamofire does support its use on supported platforms.
+
+Once you have your Swift package set up, adding Alamofire as a dependency is as easy as adding it to the dependencies value of your Package.swift.
+
+dependencies: [
+    .package(url: "https://github.com/nimblehq/JSONMapper.git", .upToNextMajor(from: "1.0.0"))
+]
+
 
 ## License
 
