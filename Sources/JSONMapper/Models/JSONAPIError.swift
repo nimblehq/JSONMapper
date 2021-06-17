@@ -22,5 +22,5 @@ public struct JSONAPIError: Error, Decodable, Equatable {
     public let code: String?
 }
 
-//note:- JSON:API error object is sent as an array of errors.
+/// JSON:API error object is sent as an array of errors.
 extension Array: Error where Element == JSONAPIError {}

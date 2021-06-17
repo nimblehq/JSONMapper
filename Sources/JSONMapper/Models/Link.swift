@@ -9,6 +9,7 @@ import Foundation
 public struct Link: Codable {
     
     enum CodingKeys: String, CodingKey {
+
         case url = "href"
         case meta
     }

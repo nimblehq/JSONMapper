@@ -14,10 +14,9 @@ public enum JSONAPIResponseType {
 }
 
 public struct JSONAPIObject: Decodable {
-    //todo:- data, errors, meta - (either data or errors)
-    //       jsonapi, links, included (optional)
+
     enum CodingKeys: String, CodingKey {
-        case data, links, included, errors, meta
+        case data, errors, meta, links, included
     }
     
     public let type: JSONAPIResponseType

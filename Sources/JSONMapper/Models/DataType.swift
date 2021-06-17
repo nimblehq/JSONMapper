@@ -23,10 +23,8 @@ public enum DataType<T: Codable>: Codable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
-        case .single(let object):
-            try container.encode(object)
-        case .collection(let array):
-            try container.encode(array)
+        case .single(let object): try container.encode(object)
+        case .collection(let array): try container.encode(array)
         }
     }
 }

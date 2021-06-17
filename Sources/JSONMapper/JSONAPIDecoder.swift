@@ -10,6 +10,12 @@ public class JSONAPIDecoder: JSONDecoder {
     
     private typealias ResourceDictionary = [ResourceIdentifier: Resource]
 
+    private let decoder: JSONEncoder
+
+    init(decoder: JSONEncoder = JSONEncoder()) {
+        self.decoder = decoder
+    }
+
     public override func decode<T>(_ type: T.Type, from data: Data) throws -> T where T: Decodable {
         let jsonAPIObject = try super.decode(JSONAPIObject.self, from: data)
 
@@ -17,11 +23,11 @@ public class JSONAPIDecoder: JSONDecoder {
         let dictionary = includedDictionary(from: includedData)
 
         switch jsonAPIObject.type {
-        case .data(let data):
+        case .data(let data): 
             return try decode(data, including: dictionary, into: type)
-        case .meta(let meta):
+        case .meta(let meta): 
             return try decode(meta, into: type)
-        case .errors(let errors):
+        case .errors(let errors): 
             throw errors
         }
     }
@@ -58,7 +64,7 @@ public class JSONAPIDecoder: JSONDecoder {
 extension JSONAPIDecoder {
     
     private func decode<T: Decodable>(_ meta: JSON, into type: T.Type) throws -> T {
-        let data = try JSONEncoder().encode(meta)
+        let data = try decoder.encode(meta)
         return try super.decode(type, from: data)
     }
     
@@ -68,7 +74,6 @@ extension JSONAPIDecoder {
         switch dataType {
         case .single(let resource):
             return try decode(resource, including: includedDictionary, into: type)
-            
         case .collection(let resources):
             return try decodeCollection(of: resources, including: includedDictionary, into: type)
         }
@@ -78,7 +83,7 @@ extension JSONAPIDecoder {
                                       including includedDictionary: ResourceDictionary,
                                       into type: T.Type) throws -> T {
         let dictionary = try resolvedAttributes(of: resource, including: includedDictionary)
-        let data = try JSONEncoder().encode(dictionary)
+        let data = try decoder.encode(dictionary)
         return try super.decode(type, from: data)
     }
 
@@ -86,7 +91,7 @@ extension JSONAPIDecoder {
                                                 including includedDictionary: ResourceDictionary,
                                                 into type: T.Type) throws -> T {
         let collection = try resources.compactMap { try resolvedAttributes(of: $0, including: includedDictionary) }
-        let data = try JSONEncoder().encode(collection)
+        let data = try decoder.encode(collection)
         return try super.decode(type, from: data)
     }
 
