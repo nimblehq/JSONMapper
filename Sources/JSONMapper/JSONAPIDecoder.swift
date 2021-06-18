@@ -129,7 +129,7 @@ extension JSONAPIDecoder {
     private func getResource(from includedDictionary: ResourceDictionary,
                              for identifier: ResourceIdentifier) throws -> Resource {
         guard let resource = includedDictionary[identifier] else {
-            throw Errors.JSONAPIDecodingError.resourceNotFound(identifier: identifier)
+            return Resource(id: identifier.id, type: identifier.type)
         }
         return resource
     }

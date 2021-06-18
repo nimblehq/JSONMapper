@@ -29,4 +29,13 @@ public struct Resource: JSONAPICodable {
         links = try container.decodeIfPresent(Links.self, forKey: .links)
         meta = try container.decodeIfPresent(JSON.self, forKey: .meta)
     }
+
+    init(id: String, type: String) {
+        self.id = id
+        self.type = type
+        self.attributes = nil
+        self.relationships = nil
+        self.links = nil
+        self.meta = nil
+    }
 }
