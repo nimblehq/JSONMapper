@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.osx.deployment_target = '10.11'
     s.tvos.deployment_target = '10.0'
   
-    s.source_files = 'Source/JSONMapper/*.swift'
+    s.source_files = 'Sources/JSONMapper/*.swift'
   
     s.swift_version = '5.0'
   end
