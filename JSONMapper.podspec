@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'JSONMapper'
-    s.version = '0.0.2'
+    s.version = '0.0.2.1'
     s.license = 'MIT'
     s.summary = 'Map JSON to Decodable'
     s.homepage = 'https://github.com/nimblehq/JSONMapper'
