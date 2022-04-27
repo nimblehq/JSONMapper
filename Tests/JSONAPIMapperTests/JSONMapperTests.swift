@@ -1,4 +1,4 @@
 import XCTest
 @testable import JSONAPIMapper
 
-final class JSONMapperTests: XCTestCase {}
+final class JSONAPIMapperTests: XCTestCase {}
