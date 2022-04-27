@@ -7,8 +7,7 @@ Pod::Spec.new do |spec|
   spec.authors      = { 'Nimble' => 'dev@nimblehq.co' }
   spec.source       = { :git => 'https://github.com/nimblehq/JSONMapper.git', :tag => spec.version.to_s }
   spec.source_files = 'Sources/**/*.swift'
-  spec.ios.deployment_target  = '8.0'
-  spec.osx.deployment_target = '10.11'
-  spec.tvos.deployment_target = '10.0'
+  spec.ios.deployment_target  = '9.0'
+  spec.osx.deployment_target = '10.9'
   spec.swift_versions = '5.3'
 end
