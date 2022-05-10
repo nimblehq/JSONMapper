@@ -9,7 +9,7 @@ import Foundation
 public struct JSONAPIError: Error, Decodable, Equatable {
 
     public struct Source: Decodable, Equatable {
-        let parameter: String?
+        public let parameter: String?
     }
     
     public let id: String?
