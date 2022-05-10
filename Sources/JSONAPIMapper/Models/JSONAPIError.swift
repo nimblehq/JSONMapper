@@ -29,7 +29,7 @@ public struct JSONAPIError: Error, Decodable, Equatable {
         id: String? = nil,
         title: String? = nil,
         detail: String? = nil,
-        source: Source,
+        source: Source? = nil,
         status: String? = nil,
         code: String? = nil
     ) {
