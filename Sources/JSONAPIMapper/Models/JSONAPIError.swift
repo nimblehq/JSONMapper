@@ -10,6 +10,10 @@ public struct JSONAPIError: Error, Decodable, Equatable {
 
     public struct Source: Decodable, Equatable {
         public let parameter: String?
+
+        public init(parameter: String? = nil) {
+            self.parameter = parameter
+        }
     }
     
     public let id: String?
@@ -20,6 +24,22 @@ public struct JSONAPIError: Error, Decodable, Equatable {
     public let status: String?
     /// application-specific error code
     public let code: String?
+
+    public init(
+        id: String? = nil,
+        title: String? = nil,
+        detail: String? = nil,
+        source: Source,
+        status: String? = nil,
+        code: String? = nil
+    ) {
+        self.id = id
+        self.title = title
+        self.detail = detail
+        self.source = source
+        self.status = status
+        self.code = code
+    }
 }
 
 /// JSON:API error object is sent as an array of errors.
