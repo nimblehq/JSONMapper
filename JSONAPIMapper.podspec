@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'JSONAPIMapper'
-  spec.summary      = 'An iOS library supports mapping json data'
+  spec.summary      = 'A Swift library for mapping JSON data'
   spec.version      = '1.1.0'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/nimblehq/JSONMapper'
