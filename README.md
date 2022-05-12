@@ -12,7 +12,7 @@ Once you have your Swift package set up, adding Alamofire as a dependency is as 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/nimblehq/JSONMapper.git", .upToNextMajor(from: "1.1.0"))
+    .package(url: "https://github.com/nimblehq/JSONMapper.git", from: "1.1.1")
 ]
 ```
 
@@ -21,7 +21,7 @@ dependencies: [
 JSONAPIMapper can be added to your project using CocoaPods 0.36 or later by adding the following line to your Podfile:
 
 ```ruby
-pod 'JSONAPIMapper', '~> 1.1' (check releases to make sure this is the latest version)
+pod 'JSONAPIMapper', '1.1.1'
 ```
 
 ## License
