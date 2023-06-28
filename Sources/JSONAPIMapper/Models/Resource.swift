@@ -22,7 +22,7 @@ public struct Resource: JSONAPICodable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(String.self, forKey: .id)
+        id = (try? container.decode(String.self, forKey: .id)) ?? ""
         type = try container.decode(String.self, forKey: .type)
         attributes = try container.decodeIfPresent(JSON.self, forKey: .attributes)
         relationships = try container.decodeIfPresent([String: Relationship].self, forKey: .relationships)
